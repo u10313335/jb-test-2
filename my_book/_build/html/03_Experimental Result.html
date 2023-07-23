@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>2. Experimental Result &#8212; Simple Experiments for Regression Models</title>
   
   
@@ -43,7 +44,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -65,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3. Conclusion" href="04_Conclusion.html" />
     <link rel="prev" title="1. Execution Description" href="02_ProgramDescription.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -160,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Experimental Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Conclusion.html">3. Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_Discussion.html">4. Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_ProgramDescriptionMyST.html">1. Execution Description</a></li>
 </ul>
 
     </div>
@@ -396,45 +400,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="experimental-result">
-<h1>2. Experimental Result<a class="headerlink" href="#experimental-result" title="Permalink to this headline">#</a></h1>
-<div class="section" id="id1">
-<h2>2.1 問題一<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="experimental-result">
+<h1>2. Experimental Result<a class="headerlink" href="#experimental-result" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>2.1 問題一<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>執行結果繪製成圖：</p>
 <p>（藍點為產生的分佈點，黑線為 y = 2 * x）</p>
 <p><img alt="" src="https://hackmd.io/_uploads/Hy9tlRwq3.png" /></p>
-</div>
-<div class="section" id="id2">
-<h2>2.2 問題二<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="section" id="fitting-plot">
-<h3>Fitting Plot<a class="headerlink" href="#fitting-plot" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id2">
+<h2>2.2 問題二<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="fitting-plot">
+<h3>Fitting Plot<a class="headerlink" href="#fitting-plot" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/SJY9lRD5h.png" /></p>
 <ul class="simple">
 <li><p>藍色點：產生的 15 筆資料點</p></li>
 <li><p>黑色線：y = 2 * x</p></li>
 <li><p>藍色線：線性回歸的結果方程式</p></li>
 </ul>
-</div>
-<div class="section" id="error">
-<h3>Error:<a class="headerlink" href="#error" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="error">
+<h3>Error:<a class="headerlink" href="#error" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/HJBieADcn.png" /></p>
 <p>Training error:  0.051960923
 5-fold cross validation error:  0.08670085109770298</p>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>2.3 問題三<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id4">
-<h3>Fitting Plot<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id3">
+<h2>2.3 問題三<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Fitting Plot<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>5 degree:
 <img alt="" src="https://hackmd.io/_uploads/BJQneRvqn.png" /></p>
 <p>10 degree:
 <img alt="" src="https://hackmd.io/_uploads/Bk33eRw9h.png" /></p>
 <p>14 degree:
 <img alt="" src="https://hackmd.io/_uploads/HkHTlAPqn.png" /></p>
-</div>
-<div class="section" id="id5">
-<h3>Error:<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id5">
+<h3>Error:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/BymAe0vcn.png" /></p>
 <p><strong>DEGREE 5:</strong></p>
 <ul class="simple">
@@ -451,12 +455,12 @@ document.write(`
 <li><p>Training error:  2.3874936</p></li>
 <li><p>5-fold cross validation error:  2944648.8</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>2.4 問題四<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id7">
-<h3>Fitting Plot:<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>2.4 問題四<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>Fitting Plot:<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p><strong>產生的資料點：</strong>
 <img alt="" src="https://hackmd.io/_uploads/S1byZCv93.png" /></p>
 <p><strong>Linear Regression （藍線）：</strong>
@@ -467,9 +471,9 @@ document.write(`
 <img alt="" src="https://hackmd.io/_uploads/SkWZ-Cw53.png" /></p>
 <p><strong>14 Degree Ploynomial Regression（藍線）：</strong>
 <img alt="" src="https://hackmd.io/_uploads/r1FZWRwcn.png" /></p>
-</div>
-<div class="section" id="id8">
-<h3>Error:<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id8">
+<h3>Error:<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/SyzzW0D9h.png" /></p>
 <p><em>Linear Regression:</em></p>
 <ul class="simple">
@@ -497,44 +501,44 @@ document.write(`
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="on-different-set">
-<h3>On different set<a class="headerlink" href="#on-different-set" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="on-different-set">
+<h3>On different set<a class="headerlink" href="#on-different-set" title="Permalink to this heading">#</a></h3>
 <p>多進行幾次實驗：
 <img alt="" src="https://hackmd.io/_uploads/rk-mWRDc3.png" /></p>
 <p><img alt="" src="https://hackmd.io/_uploads/By27-Rw5n.png" /></p>
 <p><img alt="" src="https://hackmd.io/_uploads/HyY8-CPq3.png" /></p>
 <p>我們也可以看到，5 degree 的多項式表現得比線性回歸來得好。</p>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>2.5 問題五<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id10">
-<h3>Fitting Plot:<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
-<div class="section" id="data">
-<h4>10 data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h4>
+</section>
+</section>
+<section id="id9">
+<h2>2.5 問題五<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h3>Fitting Plot:<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="data">
+<h4>10 data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h4>
 <p>產生的資料點：
 <img alt="" src="https://hackmd.io/_uploads/B1htb0v9h.png" /></p>
 <p>14 Degree Ploynomial Regression（藍線）：
 <img alt="" src="https://hackmd.io/_uploads/BJ8qbAw92.png" /></p>
-</div>
-<div class="section" id="id11">
-<h4>80 data<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id11">
+<h4>80 data<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
 <p>產生的資料點：
 <img alt="" src="https://hackmd.io/_uploads/ryXoZCD92.png" /></p>
 <p>14 Degree Ploynomial Regression（藍線）：
 <img alt="" src="https://hackmd.io/_uploads/ryao-CPq2.png" /></p>
-</div>
-<div class="section" id="id12">
-<h4>320  data<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="id12">
+<h4>320  data<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
 <p>產生的資料點：
 <img alt="" src="https://hackmd.io/_uploads/HJOhWCD9h.png" /></p>
 <p>14 Degree Ploynomial Regression（藍線）：</p>
 <p><img alt="" src="https://hackmd.io/_uploads/B1fa-0wqn.png" /></p>
-</div>
-</div>
-<div class="section" id="id13">
-<h3>Error:<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id13">
+<h3>Error:<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/H1yAZRw5h.png" /></p>
 <p>比較三組的 validation error：</p>
 <ul class="simple">
@@ -542,12 +546,12 @@ document.write(`
 <li><p>80 data points: 2946.8859375</p></li>
 <li><p>320 data points: 8.50526123046875</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id14">
-<h2>2.6 問題六<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
-<div class="section" id="id15">
-<h3>Fitting Plot:<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="id14">
+<h2>2.6 問題六<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h3>Fitting Plot:<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>產生的資料點：</p>
 <p><img alt="" src="https://hackmd.io/_uploads/S1n0WRv5n.png" /></p>
 <p>λ  = 0:</p>
@@ -558,9 +562,9 @@ document.write(`
 <p><img alt="" src="https://hackmd.io/_uploads/SJ5gfRv5h.png" /></p>
 <p>λ  = 1000/m:</p>
 <p><img alt="" src="https://hackmd.io/_uploads/HyqWMAPqn.png" /></p>
-</div>
-<div class="section" id="id16">
-<h3>Error:<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id16">
+<h3>Error:<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p><img alt="" src="https://hackmd.io/_uploads/SJxff0D5n.png" /></p>
 <ul class="simple">
 <li><p><strong>λ  = 0:</strong> 24659.459375</p></li>
@@ -568,9 +572,9 @@ document.write(`
 <li><p><strong>λ  = 1/m:</strong> 1.3468624114990235</p></li>
 <li><p><strong>λ  = 1000/m:</strong> 0.8103070259094238</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

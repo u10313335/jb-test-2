@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Problems &#8212; Simple Experiments for Regression Models</title>
   
   
@@ -43,7 +44,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -65,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="1. Execution Description" href="02_ProgramDescription.html" />
     <link rel="prev" title="Simple Experiments for Regression Models" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -160,6 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="03_Experimental%20Result.html">2. Experimental Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Conclusion.html">3. Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_Discussion.html">4. Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_ProgramDescriptionMyST.html">1. Execution Description</a></li>
 </ul>
 
     </div>
@@ -355,8 +359,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="problems">
-<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problems">
+<h1>Problems<a class="headerlink" href="#problems" title="Permalink to this heading">#</a></h1>
 <ol class="arabic">
 <li><p>Use the linear model y = 2x +ε with zero-mean Gaussian noise ε∼ N(0, 1) to generate 15 data points with (equal spacing) x ∈ [−3, 3]</p></li>
 <li><p>Perform <strong>Linear Regression</strong>. Show the fitting plot, the training error, and the five-fold cross-validation errors.</p></li>
@@ -367,7 +371,7 @@ document.write(`
 <li><p>Following 4), perform polynomial regression with degree 14 by varying the number of training data points m = 10, 80, 320. Show the five-fold cross-validation errors and the fitting plots. Compare the results to those in 4)</p></li>
 <li><p>Following 4), perform polynomial regression of degree 14 via regularization. Compare the results by setting λ = 0, 0.001/m , 1/m, 1000/m , where m = 15 is the number of data points (with x = 0, 1/(m−1) , 2/(m−1), … , 1). Show the five-fold cross-validation errors and the fitting plots</p></li>
 </ol>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {

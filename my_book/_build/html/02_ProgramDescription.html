@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>1. Execution Description &#8212; Simple Experiments for Regression Models</title>
   
   
@@ -43,7 +44,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
@@ -67,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2. Experimental Result" href="03_Experimental%20Result.html" />
     <link rel="prev" title="Problems" href="01_Problems.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -162,6 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="03_Experimental%20Result.html">2. Experimental Result</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_Conclusion.html">3. Conclusion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_Discussion.html">4. Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_ProgramDescriptionMyST.html">1. Execution Description</a></li>
 </ul>
 
     </div>
@@ -263,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/02_ProgramDescription.md" target="_blank"
+      <li><a href="_sources/02_ProgramDescription.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -378,8 +382,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="execution-description">
-<h1>1. Execution Description<a class="headerlink" href="#execution-description" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="execution-description">
+<h1>1. Execution Description<a class="headerlink" href="#execution-description" title="Permalink to this heading">#</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>執行程式方法：</p>
@@ -568,8 +572,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>1.1 問題一<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h2>1.1 問題一<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>產生 x 為 -3~3 之間的隨機數字，且equal spacing，而 y 為 x 乘上 2 再加上 0~1 隨機雜訊所得之 data points：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,28 +582,28 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f6e6063ba442eb05cffb1b70d162a2bfcbe31551931a0dc6b02bb77a518bdf87.png" src="_images/f6e6063ba442eb05cffb1b70d162a2bfcbe31551931a0dc6b02bb77a518bdf87.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[-3.0000e+00, -2.5714e+00, -2.1429e+00, -1.7143e+00, -1.2857e+00,
-          -8.5714e-01, -4.2857e-01, -2.9802e-08,  4.2857e-01,  8.5714e-01,
-           1.2857e+00,  1.7143e+00,  2.1429e+00,  2.5714e+00,  3.0000e+00]],
+<img alt="_images/4c535dd015e40a3d4d7120d0794c227d16df49049d255a3079caa3309e01e852.png" src="_images/4c535dd015e40a3d4d7120d0794c227d16df49049d255a3079caa3309e01e852.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[-3.0000, -2.5714, -2.1429, -1.7143, -1.2857, -0.8571, -0.4286,
+           0.0000,  0.4286,  0.8571,  1.2857,  1.7143,  2.1429,  2.5714,
+           3.0000]],
 
-        [[-5.5733e+00, -4.6538e+00, -3.7885e+00, -2.8283e+00, -2.0825e+00,
-          -1.5318e+00,  3.4115e-02,  7.7807e-01,  1.2413e+00,  2.3671e+00,
-           2.8170e+00,  3.5633e+00,  4.4756e+00,  5.7703e+00,  6.8099e+00]]])
+        [[-5.3570, -5.1205, -3.3923, -2.8287, -1.7519, -1.4134, -0.2364,
+           0.6991,  1.8421,  1.8529,  2.9444,  3.5548,  4.5426,  5.9081,
+           6.9113]]])
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>1.2 問題二<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
-<div class="section" id="linear-regression-for-only-training-data">
-<h3>linear regression (for only training data):<a class="headerlink" href="#linear-regression-for-only-training-data" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id2">
+<h2>1.2 問題二<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="linear-regression-for-only-training-data">
+<h3>linear regression (for only training data):<a class="headerlink" href="#linear-regression-for-only-training-data" title="Permalink to this heading">#</a></h3>
 <p>輸入 X, Y 和資料點的數量，就會進行線性回歸，且這個函式最後會回傳 training error。由於之後的題目會需要把原本二維的 X 轉換到高維。</p>
 <p>origX 是原本的一維 X 資料，為了能在同個函式裡面一起畫圖，我們最後一個參數傳入原始的 X。而opt 用來選擇畫圖時的基準線，如果是 1，會畫出 <span class="math notranslate nohighlight">\(y = 2x\)</span> 的黑色直線，如果是2，會畫出 <span class="math notranslate nohighlight">\(y = sin(2πx)\)</span> 的黑色波形。</p>
 <p>這個函式用於找 training error。</p>
-<div class="section" id="linear-regression-for-both-training-validation-data">
-<h4>linear regression (for both training &amp; validation data):<a class="headerlink" href="#linear-regression-for-both-training-validation-data" title="Permalink to this headline">#</a></h4>
+<section id="linear-regression-for-both-training-validation-data">
+<h4>linear regression (for both training &amp; validation data):<a class="headerlink" href="#linear-regression-for-both-training-validation-data" title="Permalink to this heading">#</a></h4>
 <p>輸入訓練和測試資料進行線性回歸，函數最後回傳 testing error。</p>
 <p>這個函式用在做 cross validation 時，計算平均 testing error。</p>
 <div class="cell docutils container">
@@ -631,18 +635,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9d8c6a0578029edb733b0826bfab72f65b8a45e49f573a0e5e2075dca84f5748.png" src="_images/9d8c6a0578029edb733b0826bfab72f65b8a45e49f573a0e5e2075dca84f5748.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.08167415
-5-fold cross validation error:  0.10183712616562843
+<img alt="_images/7c0af6174e5e360af9d21824ec55936816223af3ebbd6689cf7a395a8bdd5e92.png" src="_images/7c0af6174e5e360af9d21824ec55936816223af3ebbd6689cf7a395a8bdd5e92.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.057736214
+5-fold cross validation error:  0.08092703223228455
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>1.3 問題三<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="id3">
+<h2>1.3 問題三<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>在這個函式中先產生資料點，並拿三種指定維度的多項式擬合。</p>
 <p>我將過程包入函式 prob3(X, Y, n, opt) 中，其中 n 是多項式的維度，opt 用來選擇畫圖時的基準線，如果是 1，會畫出 <span class="math notranslate nohighlight">\(y = 2x\)</span> 的黑色直線，如果是2，會畫出 <span class="math notranslate nohighlight">\(y = sin(2πx)\)</span> 的黑色波形。</p>
 <p>在這裡，進行 linear regression 之前，先利用 sklearn 的 LinearRegTrain，將原本只有一維的 X 資料，轉為指定維度的特徵向量。而後進行步驟與第二題相同。</p>
@@ -671,28 +675,28 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEGREE 5:
 </pre></div>
 </div>
-<img alt="_images/4b9fb1a97ccf1ec954810c9fab405634c124a329542d24ae8d92d6c98ac83653.png" src="_images/4b9fb1a97ccf1ec954810c9fab405634c124a329542d24ae8d92d6c98ac83653.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.05667347
-5-fold cross validation error:  13.215838623046874
+<img alt="_images/6180e7d6f6b087c2da38697618fa43f80c75b0e4da6dbea62da1e67f9aacded6.png" src="_images/6180e7d6f6b087c2da38697618fa43f80c75b0e4da6dbea62da1e67f9aacded6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.042950146
+5-fold cross validation error:  15.64673309326172
 DEGREE 10:
 </pre></div>
 </div>
-<img alt="_images/f80a0566d972e1b0221f5fd3cc1776bc6d010d2c5dae3ac12369116b588d8b8d.png" src="_images/f80a0566d972e1b0221f5fd3cc1776bc6d010d2c5dae3ac12369116b588d8b8d.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.025274217
-5-fold cross validation error:  84615.31875
+<img alt="_images/6802d7729c6c04a30e82acbf512658c7f671c42837c1dd1b113a42361a279206.png" src="_images/6802d7729c6c04a30e82acbf512658c7f671c42837c1dd1b113a42361a279206.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.018155564
+5-fold cross validation error:  15814.1390625
 DEGREE 14:
 </pre></div>
 </div>
-<img alt="_images/ad65e71fe9fd4f9d309e6f89640e15c0336f90c196ee71ed32214270ce9db624.png" src="_images/ad65e71fe9fd4f9d309e6f89640e15c0336f90c196ee71ed32214270ce9db624.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  1.5281893
-5-fold cross validation error:  2078212.2
+<img alt="_images/6cff13614ae1d330a9b6681a4404212009fb73ef799495305dc40c260cf1f545.png" src="_images/6cff13614ae1d330a9b6681a4404212009fb73ef799495305dc40c260cf1f545.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  1.7700533
+5-fold cross validation error:  1484657.4
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>1.4 問題四<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id4">
+<h2>1.4 問題四<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>在問題四時，新寫一個產生 sin 資料點的函式，而其餘部份使用之函數與 main 架構均與第二與第三題相同。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,45 +747,45 @@ DEGREE 14:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/badc05ae750497a11e9b4ca04ba1d9d3babd2fff19d99da06687dc320adb4600.png" src="_images/badc05ae750497a11e9b4ca04ba1d9d3babd2fff19d99da06687dc320adb4600.png" />
+<img alt="_images/b45bb9777e8b90e627a0317588b39124b31252979cbc716f136afd4f90cb126e.png" src="_images/b45bb9777e8b90e627a0317588b39124b31252979cbc716f136afd4f90cb126e.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Regression=====================================
 </pre></div>
 </div>
-<img alt="_images/24f84735747d32ffc20105ed5c4781aad5ec8a28e4e7086eacab643db2f9797d.png" src="_images/24f84735747d32ffc20105ed5c4781aad5ec8a28e4e7086eacab643db2f9797d.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.24394764
-5-fold cross validation error:  0.5501660391688347
+<img alt="_images/bf496e4a13294fa932726ca8093ea203c745df26576658bb43ca889d0133cebd.png" src="_images/bf496e4a13294fa932726ca8093ea203c745df26576658bb43ca889d0133cebd.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.24621063
+5-fold cross validation error:  0.5566189244389534
 
 
 Polynomial Regression==================================
 DEGREE 5:
 </pre></div>
 </div>
-<img alt="_images/68b6cdfc8f679bd398c62c90ec5c73fa7d53bd33dc66fac8f64e03aeed0a4896.png" src="_images/68b6cdfc8f679bd398c62c90ec5c73fa7d53bd33dc66fac8f64e03aeed0a4896.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  4.6961257e-05
-5-fold cross validation error:  0.0354345440864563
+<img alt="_images/b9f871076a28719276bf99eac1c09f981e8142da67e5fa123c2e9ce930f633df.png" src="_images/b9f871076a28719276bf99eac1c09f981e8142da67e5fa123c2e9ce930f633df.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  6.178302e-05
+5-fold cross validation error:  0.009835114330053329
 
 
 DEGREE 10:
 </pre></div>
 </div>
-<img alt="_images/f764df40fd049f9ed597593deb4c15ceb53ff84beb39566b05300469e72d60f5.png" src="_images/f764df40fd049f9ed597593deb4c15ceb53ff84beb39566b05300469e72d60f5.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  4.3682556
-5-fold cross validation error:  3.58494873046875
+<img alt="_images/c62d13239143e20cb89fcbae62216921281562c892e1f53a7b33de2187a04379.png" src="_images/c62d13239143e20cb89fcbae62216921281562c892e1f53a7b33de2187a04379.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  4.2066784
+5-fold cross validation error:  2.153838539123535
 
 
 DEGREE 14:
 </pre></div>
 </div>
-<img alt="_images/a06aad280e76b0850650e693339b9901ba06b285857f36a82f4ee95c0d859573.png" src="_images/a06aad280e76b0850650e693339b9901ba06b285857f36a82f4ee95c0d859573.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  5.87977
-5-fold cross validation error:  5519.52265625
+<img alt="_images/6b6c6e6d66ad36252251dec0aabe3e584b5ece571dff032f4e87703032e97653.png" src="_images/6b6c6e6d66ad36252251dec0aabe3e584b5ece571dff032f4e87703032e97653.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  5.645047
+5-fold cross validation error:  1761.30390625
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>1.5 問題五<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id5">
+<h2>1.5 問題五<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>產生不同資料點數量，並畫出擬合圖形即計算error，main function 架構如下：</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -814,38 +818,38 @@ DEGREE 14:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9edc8a3d04b9956ee04622d5cad73f5642d9ac876e476f2abc4df587b4c61795.png" src="_images/9edc8a3d04b9956ee04622d5cad73f5642d9ac876e476f2abc4df587b4c61795.png" />
+<img alt="_images/7bd52b4a18abdd7d3b97ec98479351261e1e8981bb4fd8f30454a580b7d4fb6c.png" src="_images/7bd52b4a18abdd7d3b97ec98479351261e1e8981bb4fd8f30454a580b7d4fb6c.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 DATA POINTS:
 </pre></div>
 </div>
-<img alt="_images/5c8c037f68ab3f954ebf2ff2bc5b2567e4f0062f64fb6b320ad3e9e3ee5ee5d2.png" src="_images/5c8c037f68ab3f954ebf2ff2bc5b2567e4f0062f64fb6b320ad3e9e3ee5ee5d2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  1.7370571
-5-fold cross validation error:  3125.001953125
+<img alt="_images/6982430ffe501a90a11ec4f1494db4160db0e7e81bf6451bb5d9aa1389469a71.png" src="_images/6982430ffe501a90a11ec4f1494db4160db0e7e81bf6451bb5d9aa1389469a71.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  10.932186
+5-fold cross validation error:  56099.55625
 </pre></div>
 </div>
-<img alt="_images/c50210c4c17cbaf467b566cdf8d0ac09628d5e7b340e1cd6d0407ef759957324.png" src="_images/c50210c4c17cbaf467b566cdf8d0ac09628d5e7b340e1cd6d0407ef759957324.png" />
+<img alt="_images/26ab3865a772482f925c700e7c77e9f4872f10a2f8b9a98b2679b986278222a9.png" src="_images/26ab3865a772482f925c700e7c77e9f4872f10a2f8b9a98b2679b986278222a9.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80 DATA POINTS:
 </pre></div>
 </div>
-<img alt="_images/c9f19718a4c259ee49a26419a1e9fd1ae838c1f94325d79f5ae03d547d900947.png" src="_images/c9f19718a4c259ee49a26419a1e9fd1ae838c1f94325d79f5ae03d547d900947.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.1977665
-5-fold cross validation error:  16813.2078125
+<img alt="_images/634aaea269921a05261d2ed9417cf3e228b536ec965e144abc6aa91c00f9e115.png" src="_images/634aaea269921a05261d2ed9417cf3e228b536ec965e144abc6aa91c00f9e115.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  3.2000496
+5-fold cross validation error:  359.108544921875
 </pre></div>
 </div>
-<img alt="_images/8b5f0d59579b9eed98ea53b9dbf54af2a0ad23b912166086f90d2864b6a37579.png" src="_images/8b5f0d59579b9eed98ea53b9dbf54af2a0ad23b912166086f90d2864b6a37579.png" />
+<img alt="_images/65cd8fe100d1a0aa544d0c3bcd43828109026d52f6a5c137927f2e529d8beebf.png" src="_images/65cd8fe100d1a0aa544d0c3bcd43828109026d52f6a5c137927f2e529d8beebf.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>320 DATA POINTS:
 </pre></div>
 </div>
-<img alt="_images/2c0616f55e00e175a798dd29a97333306f2d178e65e08448a85b6b4251312380.png" src="_images/2c0616f55e00e175a798dd29a97333306f2d178e65e08448a85b6b4251312380.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.22423823
-5-fold cross validation error:  16.220120239257813
+<img alt="_images/b8bda9c070b4ea4d898369a1851ebfa15e173b707c20b94ec9f57732c508a715.png" src="_images/b8bda9c070b4ea4d898369a1851ebfa15e173b707c20b94ec9f57732c508a715.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training error:  0.002528944
+5-fold cross validation error:  65.83494873046875
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
-<h2>1.6 問題六<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="id6">
+<h2>1.6 問題六<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>prob6 是類似 prob3 的函式，只是其中使用正規化的函式。</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -875,33 +879,33 @@ DEGREE 14:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5b71527b427893ec2a4caebfd49c16d94d8e85ac0d95aa37706793a4ebb63df2.png" src="_images/5b71527b427893ec2a4caebfd49c16d94d8e85ac0d95aa37706793a4ebb63df2.png" />
+<img alt="_images/425cc5c9c3bfcc6d11ab179a1a465a5c6ef201b9e81bec960a8b8aed082e8262.png" src="_images/425cc5c9c3bfcc6d11ab179a1a465a5c6ef201b9e81bec960a8b8aed082e8262.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lambda = 0
 </pre></div>
 </div>
-<img alt="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" src="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  4759.826171875
+<img alt="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" src="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  2298.916015625
 lambda = 0.001/m
 </pre></div>
 </div>
-<img alt="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" src="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  1.6615634918212892
+<img alt="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" src="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  1.442148208618164
 lambda = 1/m
 </pre></div>
 </div>
-<img alt="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" src="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  2.3050418853759767
+<img alt="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" src="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  2.3683940887451174
 lambda = 1000/m
 </pre></div>
 </div>
-<img alt="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" src="_images/0b6a93aaa5ebe6551a68b4114f81621a0e9ad1e9891680f47e45780422df8e43.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  1.7751333236694335
+<img alt="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" src="_images/a4c4b09551d5a282d3349c076ee2205ca4f5f90c1826c2b329e1119fd3e49464.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5-fold cross validation error:  1.7822919845581056
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
