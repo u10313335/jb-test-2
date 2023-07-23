@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>2. Experimental Result &#8212; Simple Experiments for Regression Models</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03_Experimental Result';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Conclusion" href="04_Conclusion.html" />
+    <link rel="prev" title="1. Execution Description" href="02_ProgramDescription.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Simple Experiments for Regression Models
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_Problems.html">Problems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_ProgramDescription.html">1. Execution Description</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Experimental Result</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_Conclusion.html">3. Conclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_Discussion.html">4. Discussion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_ProgramDescriptionMyST.html">1. Execution Description</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_Experimental Result.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03_Experimental Result.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2. Experimental Result</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 問題一</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 問題二</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-plot">Fitting Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3 問題三</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Fitting Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.4 問題四</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Fitting Plot:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-different-set">On different set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.5 問題五</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Fitting Plot:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">10 data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">80 data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">320  data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2.6 問題六</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Fitting Plot:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Error:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="experimental-result">
+<h1>2. Experimental Result<a class="headerlink" href="#experimental-result" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>2.1 問題一<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>執行結果繪製成圖：</p>
+<p>（藍點為產生的分佈點，黑線為 y = 2 * x）</p>
+<p><img alt="" src="https://hackmd.io/_uploads/Hy9tlRwq3.png" /></p>
+</section>
+<section id="id2">
+<h2>2.2 問題二<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="fitting-plot">
+<h3>Fitting Plot<a class="headerlink" href="#fitting-plot" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/SJY9lRD5h.png" /></p>
+<ul class="simple">
+<li><p>藍色點：產生的 15 筆資料點</p></li>
+<li><p>黑色線：y = 2 * x</p></li>
+<li><p>藍色線：線性回歸的結果方程式</p></li>
+</ul>
+</section>
+<section id="error">
+<h3>Error:<a class="headerlink" href="#error" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/HJBieADcn.png" /></p>
+<p>Training error:  0.051960923
+5-fold cross validation error:  0.08670085109770298</p>
+</section>
+</section>
+<section id="id3">
+<h2>2.3 問題三<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Fitting Plot<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>5 degree:
+<img alt="" src="https://hackmd.io/_uploads/BJQneRvqn.png" /></p>
+<p>10 degree:
+<img alt="" src="https://hackmd.io/_uploads/Bk33eRw9h.png" /></p>
+<p>14 degree:
+<img alt="" src="https://hackmd.io/_uploads/HkHTlAPqn.png" /></p>
+</section>
+<section id="id5">
+<h3>Error:<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/BymAe0vcn.png" /></p>
+<p><strong>DEGREE 5:</strong></p>
+<ul class="simple">
+<li><p>Training error:  0.03820651</p></li>
+<li><p>5-fold cross validation error:  7.849639892578125</p></li>
+</ul>
+<p><strong>DEGREE 10:</strong></p>
+<ul class="simple">
+<li><p>Training error:  0.03717179</p></li>
+<li><p>5-fold cross validation error:  49268.415625</p></li>
+</ul>
+<p><strong>DEGREE 14:</strong></p>
+<ul class="simple">
+<li><p>Training error:  2.3874936</p></li>
+<li><p>5-fold cross validation error:  2944648.8</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<h2>2.4 問題四<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>Fitting Plot:<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p><strong>產生的資料點：</strong>
+<img alt="" src="https://hackmd.io/_uploads/S1byZCv93.png" /></p>
+<p><strong>Linear Regression （藍線）：</strong>
+<img alt="" src="https://hackmd.io/_uploads/S131bAvq3.png" /></p>
+<p><strong>5 Degree Ploynomial Regression（藍線）：</strong>
+<img alt="" src="https://hackmd.io/_uploads/rJPebCwch.png" /></p>
+<p><strong>10 Degree Ploynomial Regression（藍線）：</strong>
+<img alt="" src="https://hackmd.io/_uploads/SkWZ-Cw53.png" /></p>
+<p><strong>14 Degree Ploynomial Regression（藍線）：</strong>
+<img alt="" src="https://hackmd.io/_uploads/r1FZWRwcn.png" /></p>
+</section>
+<section id="id8">
+<h3>Error:<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/SyzzW0D9h.png" /></p>
+<p><em>Linear Regression:</em></p>
+<ul class="simple">
+<li><p>Training error:  0.24523492</p></li>
+<li><p>5-fold cross validation error:   0.5493943139910697</p></li>
+</ul>
+<p><em>Polynmial Regression:</em></p>
+<ul class="simple">
+<li><p>degree 5:</p>
+<ul>
+<li><p>Training error:  8.9225614e-05</p></li>
+<li><p>5-fold cross validation error:  0.017055585980415344</p></li>
+</ul>
+</li>
+<li><p>degree 10:</p>
+<ul>
+<li><p>Training error:  8.30187</p></li>
+<li><p>5-fold cross validation error:  3.494831085205078</p></li>
+</ul>
+</li>
+<li><p>degree 14:</p>
+<ul>
+<li><p>Training error:  1.638919</p></li>
+<li><p>5-fold cross validation error:  23847.4140625</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="on-different-set">
+<h3>On different set<a class="headerlink" href="#on-different-set" title="Permalink to this heading">#</a></h3>
+<p>多進行幾次實驗：
+<img alt="" src="https://hackmd.io/_uploads/rk-mWRDc3.png" /></p>
+<p><img alt="" src="https://hackmd.io/_uploads/By27-Rw5n.png" /></p>
+<p><img alt="" src="https://hackmd.io/_uploads/HyY8-CPq3.png" /></p>
+<p>我們也可以看到，5 degree 的多項式表現得比線性回歸來得好。</p>
+</section>
+</section>
+<section id="id9">
+<h2>2.5 問題五<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="id10">
+<h3>Fitting Plot:<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<section id="data">
+<h4>10 data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h4>
+<p>產生的資料點：
+<img alt="" src="https://hackmd.io/_uploads/B1htb0v9h.png" /></p>
+<p>14 Degree Ploynomial Regression（藍線）：
+<img alt="" src="https://hackmd.io/_uploads/BJ8qbAw92.png" /></p>
+</section>
+<section id="id11">
+<h4>80 data<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<p>產生的資料點：
+<img alt="" src="https://hackmd.io/_uploads/ryXoZCD92.png" /></p>
+<p>14 Degree Ploynomial Regression（藍線）：
+<img alt="" src="https://hackmd.io/_uploads/ryao-CPq2.png" /></p>
+</section>
+<section id="id12">
+<h4>320  data<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<p>產生的資料點：
+<img alt="" src="https://hackmd.io/_uploads/HJOhWCD9h.png" /></p>
+<p>14 Degree Ploynomial Regression（藍線）：</p>
+<p><img alt="" src="https://hackmd.io/_uploads/B1fa-0wqn.png" /></p>
+</section>
+</section>
+<section id="id13">
+<h3>Error:<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/H1yAZRw5h.png" /></p>
+<p>比較三組的 validation error：</p>
+<ul class="simple">
+<li><p>10 data points: 4033.701171875</p></li>
+<li><p>80 data points: 2946.8859375</p></li>
+<li><p>320 data points: 8.50526123046875</p></li>
+</ul>
+</section>
+</section>
+<section id="id14">
+<h2>2.6 問題六<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<section id="id15">
+<h3>Fitting Plot:<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<p>產生的資料點：</p>
+<p><img alt="" src="https://hackmd.io/_uploads/S1n0WRv5n.png" /></p>
+<p>λ  = 0:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/B1LJG0wq3.png" /></p>
+<p>λ  = 0.001/m:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/SkggzAvqh.png" /></p>
+<p>λ  = 1/m:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/SJ5gfRv5h.png" /></p>
+<p>λ  = 1000/m:</p>
+<p><img alt="" src="https://hackmd.io/_uploads/HyqWMAPqn.png" /></p>
+</section>
+<section id="id16">
+<h3>Error:<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="https://hackmd.io/_uploads/SJxff0D5n.png" /></p>
+<ul class="simple">
+<li><p><strong>λ  = 0:</strong> 24659.459375</p></li>
+<li><p><strong>λ  = 0.001/m:</strong> 0.5945597171783448</p></li>
+<li><p><strong>λ  = 1/m:</strong> 1.3468624114990235</p></li>
+<li><p><strong>λ  = 1000/m:</strong> 0.8103070259094238</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_ProgramDescription.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1. Execution Description</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04_Conclusion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Conclusion</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1 問題一</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2 問題二</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-plot">Fitting Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3 問題三</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Fitting Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.4 問題四</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Fitting Plot:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Error:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-different-set">On different set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.5 問題五</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Fitting Plot:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">10 data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">80 data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">320  data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Error:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">2.6 問題六</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Fitting Plot:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Error:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By dQuQb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
