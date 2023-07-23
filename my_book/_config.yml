@@ -1,0 +1,25 @@
+# Book settings
+title: Simple Experiments for Regression Models
+author: dQuQb
+logo: logo.png
+execute:
+  execute_notebooks: force
+  timeout: 100
+  allow_errors: true
+latex:
+  latex_documents:
+    targetname: book.tex
+#bibtex_bibfiles:
+#  - references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true
